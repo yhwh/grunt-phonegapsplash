@@ -26,7 +26,7 @@ path = require 'path'
 module.exports = (config) ->
   # Android
   'android':
-    dir: path.join 'platforms', 'android', 'res'
+    dir: path.join 'screen', 'android'
     layout:
       landscape:
         splashs: [
@@ -87,16 +87,13 @@ module.exports = (config) ->
         ]
   # iOS (Retina and legacy resolutions)
   'ios':
-    dir: path.join 'platforms', 'ios', config.prjName, 'Resources', 'splash'
+    dir: path.join 'screen', 'ios'
     layout:
       landscape:
         splashs: [
           { name: 'Default-Landscape~ipad.png', width: 1024, height: 768 }
           { name: 'Default-Landscape@2x~ipad.png', width: 2048, height: 1536 }
           { name: 'Default-Landscape-736h.png', width: 2208, height: 1242 }
-        ]
-      portrait:
-        splashs: [
           { name: 'Default~iphone.png', width: 320, height: 480 }
           { name: 'Default@2x~iphone.png', width: 640, height: 960 }
           { name: 'Default-568h@2x~iphone.png', width: 640, height: 1136 }
@@ -104,6 +101,10 @@ module.exports = (config) ->
           { name: 'Default-Portrait@2x~ipad.png', width: 1536, height: 2008 }
           { name: 'Default-667h.png', width: 750, height: 1334 }
           { name: 'Default-736h.png', width: 1242, height: 2208 }
+        ]
+      portrait:
+        splashs: [
+
         ]
   # WebOS
   'webos':
